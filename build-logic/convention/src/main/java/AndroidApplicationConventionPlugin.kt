@@ -1,10 +1,15 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.andyc.convention.ExtensionType
+import com.andyc.convention.configureBuildTypes
 import com.andyc.convention.configureKotlinAndroid
 import com.andyc.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
+/**
+ * A custom Gradle plugin to configure the Android application module.
+ */
 class AndroidApplicationConventionPlugin: Plugin<Project> {
     override fun apply(target: Project) {
         target.run {
@@ -23,6 +28,10 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
                 }
 
                 configureKotlinAndroid(this)
+                configureBuildTypes(
+                    commonExtension = this,
+                    extensionType = ExtensionType.APPLICATION
+                )
             }
         }
     }

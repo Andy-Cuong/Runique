@@ -12,11 +12,16 @@ dependencies {
     compileOnly(libs.room.gradlePlugin)
 }
 
+// Register the custom plugins to Gradle
 gradlePlugin {
     plugins {
         register("androidApplication") {
             id = "runique.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
+        }
+        register("androidApplicationCompose") {
+            id = "runique.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
     }
 }

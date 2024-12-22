@@ -42,8 +42,8 @@ annotation = "1.9.1"
 projectApplicationId = "com.andyc.runique"
 projectVersionName = "1.0"
 projectMinSdkVersion = "25"
-projectTargetSdkVersion = "34"
-projectCompileSdkVersion = "34"
+projectTargetSdkVersion = "35"
+projectCompileSdkVersion = "35"
 projectVersionCode = "1"
 
 [libraries]
@@ -119,3 +119,4 @@ mapsplatform-secrets-plugin = { id = "com.google.android.libraries.mapsplatform.
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 runique-android-application = { id = "runique.android.application", version = "unspecified" }
+runique-android-application-compose = { id = "runique.android.application.compose", version = "unspecified" }
