@@ -8,7 +8,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
 /**
- * A custom Gradle plugin to configure the Android application module.
+ * Custom Gradle plugin to configure the Android application module.
  */
 class AndroidApplicationConventionPlugin: Plugin<Project> {
     override fun apply(target: Project) {

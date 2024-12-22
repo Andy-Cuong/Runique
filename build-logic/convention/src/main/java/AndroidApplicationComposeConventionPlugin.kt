@@ -5,7 +5,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
 
 /**
- * A custom Gradle plugin that applies the [AndroidApplicationConventionPlugin] and additional
+ * Custom Gradle plugin that applies the [AndroidApplicationConventionPlugin] and additional
  * configuration for Compose application
  */
 class AndroidApplicationComposeConventionPlugin : Plugin<Project> {

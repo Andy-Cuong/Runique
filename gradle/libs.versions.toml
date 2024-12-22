@@ -28,7 +28,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 org-jetbrains-kotlin-jvm = "2.0.0"
 maps = "6.4.0"
-coroutines = "1.9.0"
+coroutines = "1.10.1"
 gmsLocation = "21.3.0"
 mapsUtils = "5.0.0"
 bson = "5.2.1"
@@ -120,3 +120,4 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 
 runique-android-application = { id = "runique.android.application", version = "unspecified" }
 runique-android-application-compose = { id = "runique.android.application.compose", version = "unspecified" }
+runique-android-library = { id = "runique.android.library", version = "unspecified" }
