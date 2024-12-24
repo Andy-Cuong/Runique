@@ -1,13 +1,7 @@
 import com.android.build.api.dsl.LibraryExtension
-import com.andyc.convention.ExtensionType
 import com.andyc.convention.configureAndroidCompose
-import com.andyc.convention.configureBuildTypes
-import com.andyc.convention.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.getByType
 
 /**
