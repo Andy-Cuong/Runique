@@ -152,7 +152,7 @@ fun RegisterScreen(
                 isValid = state.passwordValidationState.hasLowerCaseCharacter
             )
             PasswordRequirement(
-                requirementText = stringResource(id = R.string.contains_uppercase_character,),
+                requirementText = stringResource(id = R.string.contains_uppercase_character),
                 isValid = state.passwordValidationState.hasUpperCaseCharacter
             )
             Spacer(modifier = Modifier.height(32.dp))
