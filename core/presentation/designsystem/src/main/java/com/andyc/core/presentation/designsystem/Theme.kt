@@ -11,6 +11,7 @@ import androidx.core.view.WindowCompat
 val DarkColorScheme = darkColorScheme(
     primary = RuniqueGreen,
     background = RuniqueBlack,
+    error = RuniqueDarkRed,
     surface = RuniqueDarkGray,
     secondary = RuniqueWhite,
     tertiary = RuniqueWhite,

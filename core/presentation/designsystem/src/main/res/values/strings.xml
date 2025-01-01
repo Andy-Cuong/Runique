@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password_is_shown">Password is shown. Click to hide</string>
+    <string name="password_is_hidden">Password is hidden. Click to show</string>
+</resources>
