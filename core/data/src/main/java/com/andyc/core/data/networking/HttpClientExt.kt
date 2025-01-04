@@ -1,4 +1,4 @@
-package com.andyc.core.data.network
+package com.andyc.core.data.networking
 
 import com.andyc.core.data.BuildConfig
 import com.andyc.core.domain.util.DataError

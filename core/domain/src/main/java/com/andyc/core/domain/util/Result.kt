@@ -16,9 +16,9 @@ inline fun <T, E: Error, R> Result<T, E>.map(map: (T) -> R): Result<R, E> {
     }
 }
 
-fun <T, E: Error> Result<T, E>.asEmptyDataResult(): EmptyDataResult<E> {
+fun <T, E: Error> Result<T, E>.asEmptyResult(): EmptyResult<E> {
     return map {  }
 }
 
 // typealias is used just to give a class an alternative (typically shorter) name
-typealias EmptyDataResult<E> = Result<Unit, E>
+typealias EmptyResult<E> = Result<Unit, E>
