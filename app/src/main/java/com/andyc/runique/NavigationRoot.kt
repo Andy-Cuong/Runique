@@ -1,6 +1,8 @@
 package com.andyc.runique
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -19,6 +21,7 @@ fun NavigationRoot(
         startDestination =  "auth"
     ) {
         authGraph(navController = navController)
+        runGraph(navController = navController)
     }
 }
 
@@ -72,6 +75,17 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController) {
                     }
                 }
             )
+        }
+    }
+}
+
+private fun NavGraphBuilder.runGraph(navController: NavController) {
+    navigation(
+        startDestination = "run_overview",
+        route = "run"
+    ) {
+        composable(route = "run_overview") {
+            Text(text = "Run Overview!")
         }
     }
 }
