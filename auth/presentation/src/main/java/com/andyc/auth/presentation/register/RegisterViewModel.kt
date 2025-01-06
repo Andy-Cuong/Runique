@@ -47,7 +47,7 @@ class RegisterViewModel(
                 val passwordValidationState = userDataValidator.validatePassword(password.toString())
                 state = state.copy(
                     passwordValidationState = passwordValidationState,
-                    canRegister = state.isEmailValid && passwordValidationState.isValidPassword
+                    canRegister = state.isEmailValid && state.passwordValidationState.isValidPassword
                             && !state.isRegistering
                 )
             }
