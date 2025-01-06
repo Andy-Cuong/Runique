@@ -40,7 +40,6 @@ import com.andyc.core.presentation.designsystem.CrossIcon
 import com.andyc.core.presentation.designsystem.EmailIcon
 import com.andyc.core.presentation.designsystem.Poppins
 import com.andyc.core.presentation.designsystem.RuniqueDarkRed
-import com.andyc.core.presentation.designsystem.RuniqueGray
 import com.andyc.core.presentation.designsystem.RuniqueGreen
 import com.andyc.core.presentation.designsystem.RuniqueTheme
 import com.andyc.core.presentation.designsystem.components.GradientBackground
@@ -83,7 +82,12 @@ fun RegisterScreenRoot(
 
     RegisterScreen(
         state = viewModel.state,
-        onAction = viewModel::onAction
+        onAction = { action ->
+            when (action) {
+                RegisterAction.OnLoginClick -> onSignInClick()
+                else -> viewModel.onAction(action)
+            }
+        }
     )
 }
 
@@ -98,8 +102,8 @@ fun RegisterScreen(
     ) {
         Column(
             modifier = Modifier
-                .verticalScroll(rememberScrollState())
                 .fillMaxSize()
+                .verticalScroll(rememberScrollState())
                 .padding(horizontal = 16.dp, vertical = 32.dp)
                 .padding(top = 16.dp)
         ) {
@@ -112,7 +116,7 @@ fun RegisterScreen(
                 withStyle(
                     style = SpanStyle(
                         fontFamily = Poppins,
-                        color = RuniqueGray
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 ) {
                     append(stringResource(id = R.string.already_have_an_account) + " ")
