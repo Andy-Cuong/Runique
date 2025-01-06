@@ -24,6 +24,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextLinkStyles
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.withLink
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
@@ -113,7 +114,8 @@ fun LoginScreen(
                 endIcon = null,
                 hint = stringResource(id = R.string.example_email),
                 title = stringResource(id = R.string.email),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                keyboardType = KeyboardType.Email
             )
             Spacer(modifier = Modifier.height(16.dp))
             RuniquePasswordTextField(
@@ -130,7 +132,7 @@ fun LoginScreen(
             RuniqueActionButton(
                 text = stringResource(id = R.string.log_in),
                 isLoading = state.isLoggingIn,
-                enabled = state.canLogin,
+                enabled = state.canLogin && !state.isLoggingIn,
             ) {
                 onAction(LoginAction.OnLoginClick)
             }
