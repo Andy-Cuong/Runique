@@ -1,4 +1,4 @@
-package com.andyc.run.presentation.run_overview.di
+package com.andyc.run.presentation.di
 
 import com.andyc.run.presentation.run_overview.RunOverviewViewModel
 import org.koin.core.module.dsl.viewModelOf
