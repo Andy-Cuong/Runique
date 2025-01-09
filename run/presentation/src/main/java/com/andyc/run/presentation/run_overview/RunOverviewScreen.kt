@@ -16,21 +16,27 @@ import androidx.compose.ui.unit.dp
 import com.andyc.core.presentation.designsystem.AnalyticsIcon
 import com.andyc.core.presentation.designsystem.LogoIcon
 import com.andyc.core.presentation.designsystem.LogoutIcon
-import com.andyc.core.presentation.designsystem.R
 import com.andyc.core.presentation.designsystem.RunIcon
 import com.andyc.core.presentation.designsystem.RuniqueTheme
 import com.andyc.core.presentation.designsystem.components.RuniqueFab
 import com.andyc.core.presentation.designsystem.components.RuniqueScaffold
 import com.andyc.core.presentation.designsystem.components.RuniqueToolbar
 import com.andyc.core.presentation.designsystem.components.util.DropDownItem
+import com.andyc.run.presentation.R
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun RunOverviewScreenRoot(
+    onStartRunClick: () -> Unit,
     viewModel: RunOverviewViewModel = koinViewModel()
 ) {
     RunOverviewScreen(
-        onAction = viewModel::onAction
+        onAction = { action ->
+            when (action) {
+                RunOverviewAction.OnStartClick -> onStartRunClick()
+                else -> viewModel.onAction(action)
+            }
+        }
     )
 }
 

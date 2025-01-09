@@ -82,7 +82,7 @@ fun RuniqueToolbar(
                 IconButton(onClick = onBackClick) {
                     Icon(
                         imageVector = ArrowLeftIcon,
-                        contentDescription = null,
+                        contentDescription = stringResource(id = R.string.go_back),
                         tint = RuniqueGreen,
                         modifier = Modifier
                             .size(35.dp)
