@@ -33,6 +33,7 @@ import com.andyc.core.presentation.designsystem.components.RuniqueScaffold
 import com.andyc.core.presentation.designsystem.components.RuniqueToolbar
 import com.andyc.run.presentation.R
 import com.andyc.run.presentation.active_run.components.RunDataCard
+import com.andyc.run.presentation.active_run.maps.TrackerMap
 import com.andyc.run.presentation.util.hasLocationPermission
 import com.andyc.run.presentation.util.hasNotificationPermission
 import com.andyc.run.presentation.util.shouldShowLocationPermissionRationale
@@ -136,6 +137,14 @@ fun ActiveRunScreen(
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.surface)
         ) {
+            TrackerMap(
+                isRunFinished = state.isRunFinished,
+                currentLocation = state.currentLocation,
+                locations = state.runData.locations,
+                onSnapshot = {  },
+                modifier = Modifier.fillMaxSize()
+            )
+
             RunDataCard(
                 elapsedTime = state.elapsedTime,
                 runData = state.runData,
