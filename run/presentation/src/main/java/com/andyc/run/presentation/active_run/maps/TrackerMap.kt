@@ -71,7 +71,7 @@ fun TrackerMap(
         if (currentLocation != null && !isRunFinished) {
             val latLong = LatLng(currentLocation.lat, currentLocation.long)
             cameraPositionState.animate(
-                update = CameraUpdateFactory.newLatLngZoom(latLong, 17f)
+                update = CameraUpdateFactory.newLatLngZoom(latLong, 18f)
             )
         }
     }
@@ -85,6 +85,8 @@ fun TrackerMap(
             zoomControlsEnabled = false
         )
     ) {
+        RuniquePolylines(locations = locations)
+
         if (!isRunFinished && currentLocation != null) {
             MarkerComposable(
                 currentLocation,
