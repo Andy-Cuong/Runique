@@ -8,6 +8,7 @@ import com.andyc.core.domain.run.RemoteRunDataSource
 import com.andyc.core.domain.run.Run
 import com.andyc.core.domain.run.RunId
 import com.andyc.core.domain.run.RunRepository
+import com.andyc.core.domain.run.SyncRunScheduler
 import com.andyc.core.domain.util.DataError
 import com.andyc.core.domain.util.EmptyResult
 import com.andyc.core.domain.util.Result
@@ -24,7 +25,8 @@ class OfflineFirstRunRepository(
     private val remoteRunDataSource: RemoteRunDataSource,
     private val applicationScope: CoroutineScope,
     private val runPendingSyncDao: RunPendingSyncDao,
-    private val sessionStorage: SessionStorage
+    private val sessionStorage: SessionStorage,
+    private val syncRunScheduler: SyncRunScheduler
 ): RunRepository {
     override fun getRuns(): Flow<List<Run>> {
         return localRunDataSource.getRuns()
@@ -58,7 +60,15 @@ class OfflineFirstRunRepository(
 
         return when (remoteResult) {
             is Result.Error -> {
-                Result.Success(Unit) // TODO: Handle later
+                applicationScope.launch {
+                    syncRunScheduler.scheduleSync(
+                        type = SyncRunScheduler.SyncType.CreateRun(
+                            run = runWithId,
+                            mapPictureBytes = mapPicture
+                        )
+                    )
+                }.join()
+                Result.Success(Unit)
             }
             is Result.Success -> {
                 applicationScope.async {
@@ -82,6 +92,14 @@ class OfflineFirstRunRepository(
         val remoteResult = applicationScope.async {
             remoteRunDataSource.deleteRun(id)
         }.await()
+
+        if (remoteResult is Result.Error) {
+            applicationScope.launch {
+                syncRunScheduler.scheduleSync(
+                    type = SyncRunScheduler.SyncType.DeleteRun(runId = id)
+                )
+            }
+        }
     }
 
     override suspend fun syncPendingRuns() {
