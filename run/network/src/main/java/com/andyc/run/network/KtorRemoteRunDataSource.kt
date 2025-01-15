@@ -37,7 +37,7 @@ class KtorRemoteRunDataSource(
         val createRunRequestJson = Json.encodeToString(run.toCreateRunRequest())
         val result = safeCall<RunDto> {
             httpClient.submitFormWithBinaryData(
-                url = constructRoute("/route"),
+                url = constructRoute("/run"),
                 formData = formData {
                     append("MAP_PICTURE", mapPicture, Headers.build {
                         append(HttpHeaders.ContentType, "image/jpeg")
