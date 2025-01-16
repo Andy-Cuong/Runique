@@ -22,6 +22,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/analytics" />
+            <option value="$PROJECT_DIR$/analytics/analytics-feature" />
+            <option value="$PROJECT_DIR$/analytics/data" />
+            <option value="$PROJECT_DIR$/analytics/domain" />
+            <option value="$PROJECT_DIR$/analytics/presentation" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/auth" />
             <option value="$PROJECT_DIR$/auth/data" />
@@ -44,7 +49,6 @@
             <option value="$PROJECT_DIR$/run/presentation" />
           </set>
         </option>
-        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
