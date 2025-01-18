@@ -13,7 +13,7 @@ fun AnalyticsValues.toAnalyticsDashboardState(): AnalyticsDashboardState {
         totalDistanceRun = (totalDistanceRun / 1000.0).toFormattedKilometers(),
         totalTimeRun = totalTimeRun.toFormattedTotalTime(),
         fastestEverRun = fastestEverRun.toFormattedKmh(),
-        avgDistance = (avgDistancePerRun / 1000.0).toFormattedKmh(),
+        avgDistance = (avgDistancePerRun / 1000.0).toFormattedKilometers(),
         avgPace = avgPacePerRun.seconds.formatted()
     )
 }

@@ -38,7 +38,15 @@ dependencies {
     // Koin
     implementation(libs.bundles.koin)
 
-    api(libs.core)
+//    api(libs.core)
+    api(libs.asset.delivery)
+    api(libs.asset.delivery.ktx)
+    api(libs.feature.delivery)
+    api(libs.feature.delivery.ktx)
+    api(libs.review)
+    api(libs.review.ktx)
+    api(libs.app.update)
+    api(libs.app.update.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
