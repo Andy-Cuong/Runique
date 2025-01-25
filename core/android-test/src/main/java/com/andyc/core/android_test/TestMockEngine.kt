@@ -1,3 +1,5 @@
+@file:OptIn(InternalAPI::class)
+
 package com.andyc.core.android_test
 
 import com.andyc.auth.data.LoginResponse
@@ -32,7 +34,6 @@ class TestMockEngine(
     override val config: HttpClientEngineConfig
         get() = mockEngineConfig
 
-    @OptIn(InternalAPI::class)
     override suspend fun execute(data: HttpRequestData): HttpResponseData {
         return withContext(coroutineContext) {
             mockEngine.execute(data)
