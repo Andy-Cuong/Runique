@@ -12,7 +12,6 @@ import org.junit.jupiter.api.extension.AfterEachCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
 import org.junit.jupiter.api.extension.ExtensionContext
 
-
 class MainCoroutineExtension(
     val testDispatcher: TestDispatcher = UnconfinedTestDispatcher()
 ): BeforeEachCallback, AfterEachCallback {
