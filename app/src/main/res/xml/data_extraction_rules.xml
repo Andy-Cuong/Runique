@@ -9,11 +9,11 @@
         <include .../>
         <exclude .../>
         -->
+        <exclude domain="sharedpref" path="auth_pref.xml" />
     </cloud-backup>
-    <!--
     <device-transfer>
-        <include .../>
-        <exclude .../>
+<!--        <include .../>-->
+<!--        <exclude .../>-->
+        <exclude domain="sharedpref" path="auth_pref.xml" />
     </device-transfer>
-    -->
 </data-extraction-rules>

@@ -6,8 +6,7 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.withType
 
 /**
- * Custom Gradle plugin that applies the [AndroidApplicationConventionPlugin] and additional
- * configuration for Compose application
+ * Custom Gradle plugin that for JVM test source set
  */
 class JvmJUnit5ConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
