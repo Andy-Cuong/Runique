@@ -163,7 +163,8 @@ class OfflineFirstRunRepository(
             route = "/logout"
         ).asEmptyResult()
 
-        client.plugin(Auth).providers.filterIsInstance<BearerAuthProvider>()
+        client.plugin(Auth).providers
+            .filterIsInstance<BearerAuthProvider>()
             .firstOrNull()
             ?.clearToken()
 
